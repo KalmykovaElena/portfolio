@@ -1,0 +1,42 @@
+.aducation {
+  display: flex;
+  justify-content: space-between;
+  @media screen and (max-width: 650px) {
+    flex-direction: column;
+    align-items: center;
+  }
+  @media screen and (max-width: 420px) {
+    width: 85%;
+  }
+  &-description {
+    width: 65%;
+  }
+  &-heading {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #c1caf6;
+  }
+  &-certificates {
+    width: 30%;
+    @media screen and (max-width: 650px) {
+      display: flex;
+      gap: 5px;
+      width: 100%;
+      justify-content: center;
+    }
+    @media screen and (max-width: 500px) {
+      flex-direction: column;
+      align-items: center;
+    }
+    &__img {
+      width: 100%;
+      cursor: pointer;
+      @media screen and (max-width: 650px) {
+        width: 30%;
+      }
+      @media screen and (max-width: 500px) {
+        width: 60%;
+      }
+    }
+  }
+}
