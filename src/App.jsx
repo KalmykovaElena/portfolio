@@ -10,7 +10,8 @@ function App() {
 
   return (
         <Routes>
-          <Route path='/' element={<Main />} />
+          {/* <Route path='/' element={<Main />} /> */}
+          <Route path='/portfolio' element={<Main />} />
           <Route path='/works' element={<Main />} />
           <Route path='*' element={<NotFound />} />
           <Route path='/about-me' element={<AboutMe />} />

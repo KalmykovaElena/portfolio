@@ -21,11 +21,11 @@
       font-size: 2rem;
       font-weight: bold;
       color: #c1caf6;
-      line-height:.5rem;
+      line-height: 0.5rem;
       margin: 1rem;
       @media screen and (max-width: 800px) {
         font-size: 1.5rem;
-        line-height:1rem;
+        line-height: 1rem;
       }
       @media screen and (max-width: 475px) {
         font-size: 1.2rem;
@@ -35,26 +35,27 @@
       font-size: 1rem;
       color: #ffffff;
       font-weight: initial;
-      
     }
-    &__stack, &__github {
+    &__stack,
+    &__github {
       color: #e9dab2;
       text-align: start;
-      span,a{
+      span,
+      a {
         color: #280e5fb0;
         font-weight: bold;
       }
     }
-    &__github{
+    &__github {
       @media screen and (max-width: 425px) {
-        font-size: .7rem;
+        font-size: 0.7rem;
       }
     }
-    &__details{
-        text-align:justify;
-        @media screen and (max-width: 425px) {
-          font-size: .8rem;
-        }
+    &__details {
+      text-align: justify;
+      @media screen and (max-width: 425px) {
+        font-size: 0.8rem;
+      }
     }
   }
 
@@ -80,6 +81,9 @@
         position: absolute;
         left: 0;
       }
+      &:hover{
+        cursor: pointer;
+      }
     }
     button {
       background: none;
@@ -87,12 +91,26 @@
       color: antiquewhite;
       font-size: 1.5rem;
       padding: 0;
-      &:hover{
-        color:#280e5fb0;
+      &:hover {
+        color: #280e5fb0;
       }
       @media screen and (max-width: 425px) {
         font-size: 1rem;
       }
     }
   }
+}
+.ant-modal{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+.ant-modal-mask {
+  background: rgb(0 0 0 / 88%);
+  backdrop-filter: blur(5.5px);
+}
+.ant-modal-content{
+  background-color: rgb(123 146 161 / 47%);
+  width: 80vw;
+  margin: 0 auto;
+}
 }

@@ -3,13 +3,16 @@ import { useSelector } from 'react-redux';
 import './works-item.scss';
 import { useState } from 'react';
 import { Fade } from 'react-reveal';
+import { Modal } from 'antd';
+import { Slider } from '../slider';
 
 function WorksItem(props) {
   const [fadeIn, setFadeIn] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const openInNewTab = (url) => {
     window.open(url, '_blank', 'noopener,noreferrer');
   };
-  const { name, purpose, stack, github, description, img1, img2, deploy } =
+  const { name, purpose, stack, github, description, images, deploy } =
     props.item;
   const lang = useSelector((state) => state.value.lang);
 
@@ -36,16 +39,28 @@ function WorksItem(props) {
           className='project-image__wrapper'
           onMouseOver={() => setFadeIn(true)}
           onMouseOut={() => setFadeIn(false)}
+          onClick={() => setIsModalOpen(true)}
         >
-          <img src={img1} alt='' />
+          <img src={images[0]} alt='' />
           <Fade right in={fadeIn} tag='h5' className='mt-3'>
-            <img src={img2} alt='' className='additional-image' />
+            <img src={images[1]} alt='' className='additional-image' />
           </Fade>
         </div>
         <button onClick={() => openInNewTab(deploy)}>
           {lang == 'ru' ? 'смотреть приложение' : 'try it'}
         </button>
       </div>
+      <Modal
+            open={isModalOpen}
+            onCancel={() => setIsModalOpen(false)}
+            closeIcon={null}
+            footer={null}
+            wrapClassName="slider-wrapper"
+            centered={true}
+            width="100%"
+          >
+            <Slider files={images} />
+          </Modal>
     </div>
   );
 }

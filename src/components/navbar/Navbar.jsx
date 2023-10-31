@@ -15,7 +15,7 @@ const Navbar = () => {
     }, []);
   return (
     <nav className={width>600 ?'nav-active':  isBurgerOpen?'nav-active':'nav-disable'}>
-      <NavLink to="/">{lang == 'ru' ? 'Работы' : 'Works'} </NavLink>
+      <NavLink to="/portfolio">{lang == 'ru' ? 'Работы' : 'Works'} </NavLink>
       <NavLink to="/about-me">{lang == 'ru' ? 'ОбоМне' : 'AboutMe'}</NavLink>
       <NavLink to="/contacts">{lang == 'ru' ? 'Контакты' : 'Contacts'}</NavLink>
     </nav>
